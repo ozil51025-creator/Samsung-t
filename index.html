@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galaxy Crown</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="login" class="login">
+  <div class="login-card">
+    <div class="logo">👑 GALAXY CROWN</div>
+    <h1>Create account</h1>
+    <p>Samsung Gadgets Investment Platform</p>
+    <input placeholder="Full name">
+    <input placeholder="Phone number">
+    <input type="password" placeholder="Password">
+    <input placeholder="Referral code (optional)">
+    <button onclick="enterApp()">Create Account</button>
+    <a onclick="alert('Sign in form ready')">Already have an account? Sign in</a>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+<header class="hero">
+  <div class="top"><b>GALAXY CROWN</b><span>🔔</span></div>
+  <h1>Invest in Technology</h1>
+  <p>Earn rewards from selected gadget packages</p>
+  <div class="balance"><small>Total Balance</small><strong>UGX 520,000</strong>
+    <div><button onclick="toast('Deposit page opened')">Deposit</button><button class="gold" onclick="toast('Withdrawal requires an approved product')">Withdraw</button></div>
+  </div>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="quick"><button onclick="showPage('my')">📦<small>My Products</small></button><button onclick="showPage('referral')">🎁<small>Referral</small></button><button onclick="showPage('team')">👥<small>Team</small></button></div>
+  <h2>Featured Gadgets</h2><div class="grid" id="featured"></div>
+</section>
+
+<section id="products" class="page">
+<h2>Investment Packages</h2><div class="chips"><span>All</span><span>Phones</span><span>Tablets</span><span>Watches</span><span>Buds</span></div>
+<div id="productsList"></div>
+</section>
+
+<section id="my" class="page">
+<h2>My Products</h2>
+<div class="card"><b>Galaxy S24 Ultra</b><span class="status">Active</span><p>Daily earning <b>UGX 32,500</b></p><p>Total earning UGX 650,000 · 15/20 days</p><div class="progress"><i style="width:75%"></i></div></div>
+<div class="card"><b>Galaxy Watch 6</b><span class="pending">Pending</span><p>Purchase is waiting for approval.</p></div>
+</section>
+
+<section id="referral" class="page">
+<h2>Referral Program</h2><div class="refbox"><small>Your Referral Code</small><strong>SAMS99AB</strong><button onclick="shareRef()">Share Now</button></div>
+<div class="levels"><div><b>25%</b><small>Level 1</small></div><div><b>2%</b><small>Level 2</small></div><div><b>1%</b><small>Level 3</small></div></div>
+<div class="card"><h3>How it works</h3><p>1. Share your referral link.</p><p>2. Friends register and purchase.</p><p>3. Referral commissions are credited according to the configured levels.</p></div>
+</section>
+
+<section id="team" class="page">
+<h2>My Team</h2><div class="teamstats"><div><b>12</b><small>Level 1</small></div><div><b>36</b><small>Level 2</small></div><div><b>104</b><small>Level 3</small></div></div>
+<div class="member"><b>John Doe</b><span>L1</span><p>UGX 650,000 invested · UGX 162,500 commission</p></div>
+<div class="member"><b>Mary Nambi</b><span>L1</span><p>UGX 370,000 invested · UGX 92,500 commission</p></div>
+</section>
+
+<section id="account" class="page">
+<h2>My Account</h2><div class="profile"><div class="avatar">👤</div><b>SAMS99AB</b><small>User ID: 100001</small></div>
+<div class="menu">
+<div>👤 My Profile <b>›</b></div><div>💰 Wallet <b>›</b></div><div>📥 Deposit History <b>›</b></div><div>📤 Withdrawal History <b>›</b></div><div onclick="showPage('my')">📦 My Products <b>›</b></div><div onclick="showPage('referral')">🎁 Referral Program <b>›</b></div><div onclick="showPage('team')">👥 My Team <b>›</b></div><div>🔒 Change Password <b>›</b></div><div>💬 Customer Support <b>@Grandcrown01</b></div><div class="logout" onclick="location.reload()">🚪 Logout</div>
+</div></section>
+</main>
+
+<nav>
+<button class="active" onclick="showPage('home',this)">⌂<small>Home</small></button>
+<button onclick="showPage('products',this)">▣<small>Products</small></button>
+<button onclick="showPage('my',this)">◫<small>My Products</small></button>
+<button onclick="showPage('referral',this)">♢<small>Referral</small></button>
+<button onclick="showPage('team',this)">♙<small>Team</small></button>
+<button onclick="showPage('account',this)">●<small>Account</small></button>
+</nav>
+<div id="toast"></div>
+</div>
+<script src="js/app.js"></script>
+</body></html>
